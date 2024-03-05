@@ -1,21 +1,18 @@
 import {View, StyleSheet, Text} from "react-native";
 import {SafeAreaView} from 'react-native-safe-area-context';
+import Hub from "../components/Hub";
 
 export default function (){
     return(
-        <SafeAreaView>
-            <View style={css.hub}>
-
-            </View>
+        <SafeAreaView style={css.container}>
+            <Hub></Hub>
         </SafeAreaView>
     )
 }
 
 const css = StyleSheet.create({
-    hub: {
-        height:'30%',
-        width:'100%',
-        backgroundColor: '#FFD60A'
-
+    container: {
+        width: '100%',
+        height:'100%',
     }
 })
