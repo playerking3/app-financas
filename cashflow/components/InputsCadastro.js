@@ -1,4 +1,4 @@
-import {Text, TextInput, View} from "react-native";
+import {StyleSheet, Text, TextInput, View} from "react-native";
 import {useState} from "react";
 
 export default function (props){
