@@ -4,6 +4,7 @@ import Listagem from "./screens/Listagem";
 import {StatusBar } from 'react-native';
 import Home from "./screens/Home";
 import Start from "./screens/Start";
+import Cadastro from "./screens/Cadastro";
 
 Stack = CreateStackNavigator()
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
             <Stack.Screen name="Start" component={Start}/>
             <Stack.Screen name="Home" component={Home}/>
             <Stack.Screen name="Listagem" component={Listagem}/>
+            <Stack.Screen name="Cadastro" component={Cadastro}/>
         </Stack.Navigator>
       </NavigationContainer>
   );
