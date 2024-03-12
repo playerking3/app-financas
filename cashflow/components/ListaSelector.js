@@ -1,8 +1,8 @@
-import {Text, View, StyleSheet} from "react-native";
+import {Text, View} from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faPlus} from "@fortawesome/free-solid-svg-icons";
-import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 import {faMinus} from "@fortawesome/free-solid-svg-icons/faMinus";
+import {css} from '../Style/StyleListaSelector'
 
 export default function (){
     return(
@@ -18,22 +18,3 @@ export default function (){
         </View>
     )
 }
-
-const css = StyleSheet.create({
-    container: {
-      margin: 12,
-        gap: 6
-    },
-    selectorDisplay: {
-        justifyContent: "space-between",
-        flexDirection: "row"
-    },
-    iconBg: {
-        color: 'white',
-        backgroundColor: '#FFD60A',
-        borderRadius: 42
-    },
-    texto:{
-        fontSize: 18
-    }
-})
