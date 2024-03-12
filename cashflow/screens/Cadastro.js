@@ -33,7 +33,8 @@ const css = StyleSheet.create({
     container2: {
         height: "50%",
         justifyContent: "center",
-        margin: 20
+        margin: 20,
+        gap: 25
     },
     inputs:{
         gap: 15

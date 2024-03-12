@@ -10,7 +10,8 @@ export default function (){
 
 const css = StyleSheet.create({
     titulo:{
-        color: "#FFD60A",
+        textAlign: "center",
+        color: "black",
         fontSize: 25
     }
 })
