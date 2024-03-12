@@ -3,6 +3,7 @@ import {SafeAreaView, StyleSheet} from "react-native";
 import Hub from "../components/Hub";
 import ListaSelector from "../components/ListaSelector";
 import ListagemTabela from "../components/ListagemTabela";
+import Navigator from "../components/Navigator";
 
 export default function (){
     return(
@@ -10,6 +11,7 @@ export default function (){
             <Hub></Hub>
             <ListaSelector></ListaSelector>
             <ListagemTabela></ListagemTabela>
+            <Navigator></Navigator>
         </SafeAreaView>
     )
 }
