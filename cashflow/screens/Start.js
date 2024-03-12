@@ -4,9 +4,7 @@ import * as LocalAuthentication from 'expo-local-authentication';
 function Start({navigation}){
     async function autenticar(){
          const resposta = await LocalAuthentication.authenticateAsync()
-        console.log(resposta)
         if (resposta.success){
-            console.log("aaaaaa")
             navigation.navigate("Home")
         }
     }

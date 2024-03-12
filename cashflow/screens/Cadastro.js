@@ -1,11 +1,19 @@
-import {StyleSheet, View} from "react-native";
+import {Pressable, StyleSheet, Text, View} from "react-native";
 import {SafeAreaView} from 'react-native-safe-area-context';
 import InputsCadastro from "../components/InputsCadastro";
 import SelectCadastro from "../components/SelectCadastro";
 import Hub from "../components/Hub";
 import TituloCadastro from "../components/TituloCadastro";
+import RNDateTimePicker from "@react-native-community/datetimepicker";
+import {useState} from "react";
 
 export default function (){
+    const [exibe, setExibe] = useState(false)
+
+    const onChange = (event) => {
+        setExibe(false);
+    };
+
     return(
         <SafeAreaView style={css.container}>
             <Hub></Hub>
@@ -16,7 +24,10 @@ export default function (){
                 <View style={css.inputs}>
                     <InputsCadastro  nome="Valor:" tipo="numeric"></InputsCadastro>
                     <InputsCadastro style={css.inputs}  nome="Nome:"></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
+                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange}/>}
+                    <Pressable onPress={() => setExibe(true)}>
+                        <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
+                    </Pressable>
                     <SelectCadastro></SelectCadastro>
                 </View>
             </View>

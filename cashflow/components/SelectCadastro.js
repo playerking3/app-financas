@@ -1,8 +1,10 @@
 import RNPickerSelect from 'react-native-picker-select';
-import {StyleSheet} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 
 export default function (){
     return(
+        <View>
+            <Text>Categoria</Text>
             <RNPickerSelect
                 style={css.borda}
                 onValueChange={(value) => console.log(value)}
@@ -11,6 +13,7 @@ export default function (){
                     { label: 'Despesas', value: 'despesas' }
                 ]}
             />
+        </View>
     )
 }
 
