@@ -15,8 +15,8 @@ export default function (){
                 </View>
                 <View style={css.inputs}>
                     <InputsCadastro  nome="Valor:" tipo="numeric"></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Nome"></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Data"></InputsCadastro>
+                    <InputsCadastro style={css.inputs}  nome="Nome:"></InputsCadastro>
+                    <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
                     <SelectCadastro></SelectCadastro>
                 </View>
             </View>
