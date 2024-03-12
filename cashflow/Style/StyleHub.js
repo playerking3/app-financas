@@ -7,6 +7,7 @@ export const css = StyleSheet.create({
         backgroundColor: '#FFD60A',
         borderBottomRightRadius: 30,
         borderBottomLeftRadius: 30,
+        zIndex:2
     },
     nomeFoto: {
         flexDirection:'row',

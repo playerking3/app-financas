@@ -1,5 +1,4 @@
 import {StyleSheet} from "react-native";
-
 export const css = StyleSheet.create({
     container: {
         height: '15%',
@@ -33,6 +32,5 @@ export const css = StyleSheet.create({
         alignItems: 'center',
         borderBottomLeftRadius:100,
         borderTopLeftRadius:100,
-        backgroundColor: '#dcbe02',
     }
 })
