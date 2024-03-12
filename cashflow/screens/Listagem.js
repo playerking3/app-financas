@@ -5,7 +5,7 @@ import ListaSelector from "../components/ListaSelector";
 import ListagemTabela from "../components/ListagemTabela";
 import Navigator from "../components/Navigator";
 
-export default function (){
+export default function ({navigation}){
     return(
         <SafeAreaView style={css.container}>
             <Hub></Hub>
