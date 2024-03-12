@@ -13,7 +13,7 @@ export default function (){
                 </View>
                 <Hr/>
                 <View style={css.linhaBtn}>
-                    <Pressable style={css.btn}><Text style={css.btnTexto}>Adicionar</Text></Pressable>
+                    <Pressable style={css.btn} onPress={() => navigation.navigate("Cadastro")><Text style={css.btnTexto}>Adicionar</Text></Pressable>
                 </View>
                 <Hr/>
             </View>
