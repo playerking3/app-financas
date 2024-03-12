@@ -2,6 +2,7 @@ import {View, StyleSheet, Text} from "react-native";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faXmark} from "@fortawesome/free-solid-svg-icons/faXmark";
 import {faCoins, faPlus} from "@fortawesome/free-solid-svg-icons";
+import {css} from '../Style/StyleMetas'
 
 export default function (){
     return(

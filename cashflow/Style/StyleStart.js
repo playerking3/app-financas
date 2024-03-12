@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
 
-const css = StyleSheet.create({
+export const css = StyleSheet.create({
     container: {
         height: '100%',
         width: '100%',

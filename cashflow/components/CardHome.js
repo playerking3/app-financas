@@ -1,5 +1,6 @@
 import {View, StyleSheet, Text, Image, Pressable} from "react-native";
 import Cards from "./Cards";
+import {css} from "../Style/StyleCardHome";
 
 function CardHome (){
     return(

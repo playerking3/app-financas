@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native";
 
-const css = StyleSheet.create({
+export const css = StyleSheet.create({
     metas: {
         width: '90%',
         height:'30%',

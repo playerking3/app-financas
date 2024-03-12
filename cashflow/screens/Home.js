@@ -4,6 +4,7 @@ import Hub from "../components/Hub";
 import Metas from "../components/Metas";
 import CardHome from "../components/CardHome";
 import Navigator from "../components/Navigator";
+import {css} from '../Style/StyleHome'
 
 export default function (){
     return(
