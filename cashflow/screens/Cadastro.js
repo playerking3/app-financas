@@ -13,8 +13,8 @@ export default function (){
                 <View>
                     <TituloCadastro></TituloCadastro>
                 </View>
-                <View>
-                    <InputsCadastro style={css.inputs} nome="Valor:" tipo="numeric"></InputsCadastro>
+                <View style={css.inputs}>
+                    <InputsCadastro  nome="Valor:" tipo="numeric"></InputsCadastro>
                     <InputsCadastro style={css.inputs}  nome="Nome"></InputsCadastro>
                     <InputsCadastro style={css.inputs}  nome="Data"></InputsCadastro>
                     <SelectCadastro></SelectCadastro>
@@ -32,9 +32,10 @@ const css = StyleSheet.create({
     },
     container2: {
         height: "50%",
-        justifyContent: "center"
+        justifyContent: "center",
+        margin: 20
     },
     inputs:{
-        padding: 80
+        gap: 15
     }
 })

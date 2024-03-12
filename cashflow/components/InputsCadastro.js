@@ -10,10 +10,20 @@ export default function (props){
         <View>
             <Text>{props.nome}</Text>
             <TextInput
-                style={{height: 40, borderColor: "black", borderWidth: 2, paddingHorizontal: "40%" , borderRadius: 20}}
+                style={css.input}
                 placeholder="Digite aqui!"
                 keyboardType={props.tipo}
             />
         </View>
     )
 }
+
+const css = StyleSheet.create({
+    inputs: {
+        height: 40,
+        borderColor: "black",
+        borderBottomWidth: 2,
+        paddingHorizontal: "40%" ,
+        borderRadius: 20
+    }
+})

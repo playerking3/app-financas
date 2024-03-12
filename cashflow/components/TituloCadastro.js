@@ -11,6 +11,6 @@ export default function (){
 const css = StyleSheet.create({
     titulo:{
         color: "#FFD60A",
-        fontSize: 40
+        fontSize: 25
     }
 })
