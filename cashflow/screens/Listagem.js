@@ -11,7 +11,7 @@ export default function ({navigation}){
             <Hub></Hub>
             <ListaSelector></ListaSelector>
             <ListagemTabela></ListagemTabela>
-            <Navigator></Navigator>
+            <Navigator navigation={navigation}></Navigator>
         </SafeAreaView>
     )
 }
