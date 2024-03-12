@@ -2,7 +2,7 @@ import {Pressable, StyleSheet, Text, View} from "react-native";
 import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
 
-export default function (){
+export default function ({navigation}){
     return(
         <View style={css.container}>
             <View>
@@ -13,7 +13,7 @@ export default function (){
                 </View>
                 <Hr/>
                 <View style={css.linhaBtn}>
-                    <Pressable style={css.btn} onPress={() => navigation.navigate("Cadastro")><Text style={css.btnTexto}>Adicionar</Text></Pressable>
+                    <Pressable style={css.btn} onPress={() => navigation.navigate("Cadastro")}><Text style={css.btnTexto}>Adicionar</Text></Pressable>
                 </View>
                 <Hr/>
             </View>

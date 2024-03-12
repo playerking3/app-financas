@@ -10,7 +10,7 @@ export default function ({navigation}){
         <SafeAreaView style={css.container}>
             <Hub></Hub>
             <ListaSelector></ListaSelector>
-            <ListagemTabela></ListagemTabela>
+            <ListagemTabela navigation={navigation}></ListagemTabela>
             <Navigator navigation={navigation}></Navigator>
         </SafeAreaView>
     )
