@@ -5,7 +5,7 @@ const Dados = createContext();
 
 function DadosProvider({ children }) {
     const [financeiro, setFinanceiro] = useState([])
-
+    //const [total, setTotal] =
     function cadastroFinanceiro(dados = {}) {
         if(dados?.valor === "" || dados?.nome === "" || dados?.data === "" || dados?.categoria === "") {
             return Alert.alert("Dados não informados")

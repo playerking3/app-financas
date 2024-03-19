@@ -9,9 +9,13 @@ import {useState} from "react";
 
 export default function (){
     const [exibe, setExibe] = useState(false)
+    const [data, setData] = useState('')
 
     const onChange = (event) => {
         setExibe(false);
+        const dia = new Date(event.nativeEvent.timestamp).getDay()
+        const mes = new Date(event.nativeEvent.timestamp).getMonth()
+        setData(dia + '/' + mes)
     };
 
     return(
