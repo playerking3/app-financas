@@ -6,14 +6,15 @@ import Home from "./screens/Home";
 import Start from "./screens/Start";
 import Config from "./screens/Config";
 import Cadastro from "./screens/Cadastro";
-import {DadosProvider} from "./context/Dados";
+import {Dados, DadosProvider} from "./context/Dados";
+import {useContext} from "react";
 
 Stack = CreateStackNavigator()
 export default function App() {
   return (
       <DadosProvider>
           <NavigationContainer>
-              <StatusBar backgroundColor={'#FFD60A'}/>
+              <StatusBar backgroundColor={'black'}/>
               <Stack.Navigator initialRouteName={'Start'} screenOptions={{ headerShown: false}}>
                   <Stack.Screen name="Start" component={Start}/>
                   <Stack.Screen name="Home" component={Home}/>

@@ -5,10 +5,32 @@ import SelectCadastro from "../components/SelectCadastro";
 import Hub from "../components/Hub";
 import TituloCadastro from "../components/TituloCadastro";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {Dados} from "../context/Dados";
 
 export default function (){
     const [exibe, setExibe] = useState(false)
+    const {texto, setTexto} = useContext(Dados)
+    const {branco, setBranco} = useContext(Dados)
+
+    const css = StyleSheet.create({
+        container: {
+            width: '100%',
+            height:'100%',
+            alignItems: 'center',
+
+        },
+        container2: {
+            height: "50%",
+            justifyContent: "center",
+            margin: 20,
+            gap: 25
+        },
+        inputs:{
+            gap: 15,
+            color: texto
+        }
+    })
 
     const onChange = (event) => {
         setExibe(false);
@@ -22,7 +44,7 @@ export default function (){
                     <TituloCadastro></TituloCadastro>
                 </View>
                 <View style={css.inputs}>
-                    <InputsCadastro  nome="Valor:" tipo="numeric"></InputsCadastro>
+                    <InputsCadastro style={css.inputs}  nome="Valor:" tipo="numeric"></InputsCadastro>
                     <InputsCadastro style={css.inputs}  nome="Nome:"></InputsCadastro>
                     { exibe && <RNDateTimePicker value={new Date()} onChange={onChange}/>}
                     <Pressable onPress={() => setExibe(true)}>
@@ -34,20 +56,3 @@ export default function (){
         </SafeAreaView>
     )
 }
-
-const css = StyleSheet.create({
-    container: {
-        width: '100%',
-        height:'100%',
-        alignItems: 'center'
-    },
-    container2: {
-        height: "50%",
-        justifyContent: "center",
-        margin: 20,
-        gap: 25
-    },
-    inputs:{
-        gap: 15
-    }
-})

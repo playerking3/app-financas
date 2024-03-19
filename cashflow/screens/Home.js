@@ -10,8 +10,16 @@ import {Dados} from "../context/Dados";
 
 export default function ({navigation}){
     // const {financeiro, cadastroFinanceiro} = useContext(Dados)
-
-
+    const {branco,setBranco} = useContext(Dados)
+    const {cinza, setCinza} = useContext(Dados)
+    const css = StyleSheet.create({
+        container: {
+            width: '100%',
+            height:'100%',
+            alignItems: 'center',
+            backgroundColor:branco
+        }
+    })
     return(
         <SafeAreaView style={css.container}>
             <Hub></Hub>

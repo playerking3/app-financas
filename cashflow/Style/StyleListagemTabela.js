@@ -1,14 +1,6 @@
 import {StyleSheet} from "react-native";
 
 export const css = StyleSheet.create({
-    container: {
-        backgroundColor: '#D2D2D2',
-        margin: 12,
-        borderRadius: 12,
-        flex: 1,
-        flexDirection: "column",
-        justifyContent: "space-between"
-    },
     linha: {
         padding: 8,
         flexDirection: "row",

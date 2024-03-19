@@ -1,15 +1,33 @@
 import {Pressable, StyleSheet, Text, View} from "react-native";
 import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
+import {Dados} from "../context/Dados";
+import {useContext} from "react";
 
 export default function ({navigation}){
+    const {texto, setTexto} = useContext(Dados)
+    const {cinza, setCinza} = useContext(Dados)
+    const text = StyleSheet.create({
+        texto:{
+            fontSize: 16,
+            color: texto
+        },
+        container: {
+            backgroundColor: cinza,
+            margin: 12,
+            borderRadius: 12,
+            flex: 1,
+            flexDirection: "column",
+            justifyContent: "space-between"
+        }
+    })
     return(
-        <View style={css.container}>
+        <View style={text.container}>
             <View>
                 <View style={css.linha}>
-                    <Text style={css.texto}>Nome</Text>
-                    <Text style={css.texto}>Valor</Text>
-                    <Text style={css.texto}>Data</Text>
+                    <Text style={text.texto}>Nome</Text>
+                    <Text style={text.texto}>Valor</Text>
+                    <Text style={text.texto}>Data</Text>
                 </View>
                 <Hr/>
                 <View style={css.linhaBtn}>
@@ -19,7 +37,7 @@ export default function ({navigation}){
             </View>
 
             <View style={css.linhaBtn}>
-                <Text style={css.texto}>Total: R$00,00</Text>
+                <Text style={text.texto}>Total: R$00,00</Text>
             </View>
         </View>
     )
