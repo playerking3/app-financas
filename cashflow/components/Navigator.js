@@ -2,7 +2,6 @@ import {View, StyleSheet, Text, Image, Pressable} from "react-native";
 import {faGear, faList, faWallet} from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {css} from '../Style/StyleNavigator'
-import {useState} from "react";
 
 function Navigator({navigation}){
     return(
