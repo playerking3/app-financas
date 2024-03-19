@@ -10,9 +10,13 @@ import BtnCadastrar from "../components/BtnCadastrar";
 
 export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
+    const [data, setData] = useState('')
 
     const onChange = (event) => {
         setExibe(false);
+        const dia = new Date(event.nativeEvent.timestamp).getDay()
+        const mes = new Date(event.nativeEvent.timestamp).getMonth()
+        setData(dia + '/' + mes)
     };
 
     return(
