@@ -1,16 +1,13 @@
 import {Pressable, StyleSheet, Text, View} from "react-native";
 import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
+import TabelaLinha from "./TabelaLinha";
 
 export default function ({navigation}){
     return(
         <View style={css.container}>
             <View>
-                <View style={css.linha}>
-                    <Text style={css.texto}>Nome</Text>
-                    <Text style={css.texto}>Valor</Text>
-                    <Text style={css.texto}>Data</Text>
-                </View>
+                <TabelaLinha data={'Data'} nome={'Nome'} valor={'Valor'}/>
                 <Hr/>
                 <View style={css.linhaBtn}>
                     <Pressable style={css.btn} onPress={() => navigation.navigate("Cadastro")}><Text style={css.btnTexto}>Adicionar</Text></Pressable>
