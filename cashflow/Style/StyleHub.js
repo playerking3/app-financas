@@ -1,13 +1,6 @@
 import {StyleSheet} from "react-native";
 
 export const css = StyleSheet.create({
-    hub: {
-        height:'30%',
-        width:'100%',
-        backgroundColor: '#FFD60A',
-        borderBottomRightRadius: 30,
-        borderBottomLeftRadius: 30
-    },
     nomeFoto: {
         flexDirection:'row',
         alignItems:'center',

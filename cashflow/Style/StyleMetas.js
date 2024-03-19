@@ -6,6 +6,8 @@ export const css = StyleSheet.create({
         height:'30%',
     },
     tituloMetas: {
+        fontSize:25,
+        fontWeight:'bold'
     },
     textoMetas: {
         padding: 10,

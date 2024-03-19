@@ -5,18 +5,32 @@ import SelectCadastro from "../components/SelectCadastro";
 import Hub from "../components/Hub";
 import TituloCadastro from "../components/TituloCadastro";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
-import {useState} from "react";
-import BtnCadastrar from "../components/BtnCadastrar";
-import TextCadastro from "../components/TextCadastro";
-import Navigator from "../components/Navigator";
+import {useContext, useState} from "react";
+import {Dados} from "../context/Dados";
 
 export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
-    const [data, setData] = useState('')
-    const [valor, setValor] = useState(0)
-    const [nome, setNome] = useState("")
-    const [categoria, setCategoria] = useState("")
+    const {texto, setTexto} = useContext(Dados)
+    const {branco, setBranco} = useContext(Dados)
 
+    const css = StyleSheet.create({
+        container: {
+            width: '100%',
+            height:'100%',
+            alignItems: 'center',
+
+        },
+        container2: {
+            height: "50%",
+            justifyContent: "center",
+            margin: 20,
+            gap: 25
+        },
+        inputs:{
+            gap: 15,
+            color: texto
+        }
+    })
 
     const onChange = (event) => {
         setExibe(false);
@@ -34,9 +48,9 @@ export default function ({navigation}){
                     <TituloCadastro></TituloCadastro>
                 </View>
                 <View style={css.inputs}>
-                    <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
-                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
+                    <InputsCadastro style={css.inputs}  nome="Valor:" tipo="numeric"></InputsCadastro>
+                    <InputsCadastro style={css.inputs}  nome="Nome:"></InputsCadastro>
+                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange}/>}
                     <Pressable onPress={() => setExibe(true)}>
                          <TextCadastro style={css.inputs} value={data} nome="Data:"></TextCadastro>
                     </Pressable>
