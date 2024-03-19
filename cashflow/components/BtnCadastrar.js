@@ -1,9 +1,26 @@
 import {Pressable, StyleSheet, Text, View} from "react-native";
+import {useContext} from "react";
+import {Dados} from "../context/Dados";
 
-function BtnCadastrar({navigation}){
+function BtnCadastrar({navigation, props}){
+
+    const {cadastroFinanceiro} = useContext(Dados)
+
+    function cadastrar(){
+        cadastroFinanceiro(
+            {
+                valor: props.valor,
+                nome: props.nome,
+                data: props.data,
+                categoria: props.categoria
+            }
+        )
+        navigation.navigate("Listagem")
+    }
+
     return(
-        <View>
-            <Pressable onPress={() => navigation.navigate("Listagem")}>
+        <View >
+            <Pressable onPress={cadastrar}>
                 <Text>Cadastrar</Text>
             </Pressable>
         </View>
@@ -13,9 +30,11 @@ function BtnCadastrar({navigation}){
 
 const css = StyleSheet.create({
     container:{
-        height: "50%",
-        width: "50%",
-        backgroundColor: ""
+        height: "150px",
+        width: "150px",
+        backgroundColor: "#FFD60A",
+        textAlign: "center",
+        justifyContent: "center"
     }
 })
 

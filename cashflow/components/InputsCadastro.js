@@ -2,14 +2,14 @@ import {StyleSheet, Text, TextInput, View} from "react-native";
 import {useState} from "react";
 
 export default function (props){
-
     const [nome, setNome] = useState("");
     const [tipo, setTipo] = useState("")
+
 
     return (
         <View>
             <Text>{props.nome}</Text>
-            <TextInput
+            <TextInput onChangeText={props.setar}
                 style={{
                     height: 40,
                     borderBottomWidth: 3,

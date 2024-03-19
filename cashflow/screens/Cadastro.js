@@ -11,6 +11,10 @@ import BtnCadastrar from "../components/BtnCadastrar";
 export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
     const [data, setData] = useState('')
+    const [valor, setValor] = useState(0)
+    const [nome, setNome] = useState("")
+    const [categoria, setCategoria] = useState("")
+
 
     const onChange = (event) => {
         setExibe(false);
@@ -27,16 +31,17 @@ export default function ({navigation}){
                     <TituloCadastro></TituloCadastro>
                 </View>
                 <View style={css.inputs}>
-                    <InputsCadastro  nome="Valor:" tipo="numeric"></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Nome:"></InputsCadastro>
-                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange}/>}
+                    <Text>AAA: {valor}</Text>
+                    <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
+                    <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
+                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
                     <Pressable onPress={() => setExibe(true)}>
                         <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
                     </Pressable>
-                    <SelectCadastro></SelectCadastro>
+                    <SelectCadastro setar={setCategoria}></SelectCadastro>
                 </View>
-                <View>
-                    <BtnCadastrar navigation={navigation}></BtnCadastrar>
+                <View style={css.btn}>
+                    <BtnCadastrar valor={valor} nome={nome} data={data} categoria={categoria} style={css.btn} navigation={navigation}></BtnCadastrar>
                 </View>
             </View>
         </SafeAreaView>
@@ -57,5 +62,11 @@ const css = StyleSheet.create({
     },
     inputs:{
         gap: 15
+    },
+    btn:{
+        padding: 20,
+        backgroundColor: "#FFD60A",
+        alignItems: "center",
+        borderRadius: 20
     }
 })
