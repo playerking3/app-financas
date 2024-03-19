@@ -6,9 +6,7 @@ import {useContext} from "react";
 import TabelaLinha from "./TabelaLinha";
 
 export default function ({navigation}){
-    const {financeiro, total} = useContext(Dados)
-    const {texto, setTexto} = useContext(Dados)
-    const {cinza, setCinza} = useContext(Dados)
+    const {financeiro, total,texto, setTexto, cinza, setCinza} = useContext(Dados)
     const text = StyleSheet.create({
         texto:{
             fontSize: 16,
@@ -23,7 +21,6 @@ export default function ({navigation}){
             justifyContent: "space-between"
         }
     })
-
     console.log(total)
     return(
         <View style={text.container}>
@@ -40,7 +37,7 @@ export default function ({navigation}){
             </View>
 
             <View style={css.linhaBtn}>
-                <Text style={text.texto}>Total: R$00,00</Text>
+                <Text style={text.texto}>Total: R${(total.totalReceitas - total.totalDespesa)}</Text>
             </View>
         </View>
     )
