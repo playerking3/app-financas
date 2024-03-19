@@ -18,9 +18,10 @@ export default function ({navigation}){
 
     const onChange = (event) => {
         setExibe(false);
-        const dia = new Date(event.nativeEvent.timestamp).getDay()
-        const mes = new Date(event.nativeEvent.timestamp).getMonth()
-        setData(dia + '/' + mes)
+        const dia = new Date(event.nativeEvent.timestamp).getDate()
+        const mes = new Date(event.nativeEvent.timestamp).getMonth() + 1
+        const ano = new Date(event.nativeEvent.timestamp).getFullYear()
+        setData(dia+"/"+ mes+"/"+ano)
     };
 
     return(
@@ -31,12 +32,12 @@ export default function ({navigation}){
                     <TituloCadastro></TituloCadastro>
                 </View>
                 <View style={css.inputs}>
-                    <Text>AAA: {valor}</Text>
                     <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
                     <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
                     { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
                     <Pressable onPress={() => setExibe(true)}>
-                        <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
+                        <Text style={css.inputs}>{data}
+                        </Text>
                     </Pressable>
                     <SelectCadastro setar={setCategoria}></SelectCadastro>
                 </View>

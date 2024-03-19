@@ -12,6 +12,7 @@ function DadosProvider({ children }) {
         }
 
         setFinanceiro([...financeiro, dados])
+        console.log([...financeiro])
     }
 
 

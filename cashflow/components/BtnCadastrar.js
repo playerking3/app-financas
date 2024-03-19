@@ -2,8 +2,7 @@ import {Pressable, StyleSheet, Text, View} from "react-native";
 import {useContext} from "react";
 import {Dados} from "../context/Dados";
 
-function BtnCadastrar({navigation, props}){
-
+function BtnCadastrar(props){
     const {cadastroFinanceiro} = useContext(Dados)
 
     function cadastrar(){
@@ -15,7 +14,7 @@ function BtnCadastrar({navigation, props}){
                 categoria: props.categoria
             }
         )
-        navigation.navigate("Listagem")
+        props.navigation.navigate("Listagem")
     }
 
     return(
