@@ -10,7 +10,8 @@ export default function (props){
         <View>
             <Text>{props.nome}</Text>
             <TextInput
-                style={{height: 40,
+                style={{
+                    height: 40,
                     borderBottomWidth: 3,
                     borderColor: "black",
                     paddingHorizontal: "40%" ,

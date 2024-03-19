@@ -6,8 +6,9 @@ import Hub from "../components/Hub";
 import TituloCadastro from "../components/TituloCadastro";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
 import {useState} from "react";
+import BtnCadastrar from "../components/BtnCadastrar";
 
-export default function (){
+export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
 
     const onChange = (event) => {
@@ -29,6 +30,9 @@ export default function (){
                         <InputsCadastro style={css.inputs}  nome="Data:"></InputsCadastro>
                     </Pressable>
                     <SelectCadastro></SelectCadastro>
+                </View>
+                <View>
+                    <BtnCadastrar navigation={navigation}></BtnCadastrar>
                 </View>
             </View>
         </SafeAreaView>
