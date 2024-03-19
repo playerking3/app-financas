@@ -9,18 +9,16 @@ export default function (props){
     return (
         <View>
             <Text>{props.nome}</Text>
-            <TextInput
-                value={props.value}
+            <Text
+
                 onChangeText={props.setar}
-                style={{
-                    height: 40,
-                    borderBottomWidth: 3,
-                    borderColor: "black",
-                    paddingHorizontal: "40%" ,
-                    borderRadius: 5}}
-                placeholder="Digite aqui!"
-                keyboardType={props.tipo}
-            />
+                style={{height: 40, borderBottomWidth: 3,borderColor: "black",paddingHorizontal: "40%" ,
+                    borderRadius: 5}}>
+
+                {props.value}
+            </Text>
+
+
         </View>
     )
 }

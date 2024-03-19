@@ -7,7 +7,7 @@ export default function (props){
 
     return(
         <View>
-            <Text>Categoria</Text>
+            <Text>Categoria:</Text>
             <RNPickerSelect
                 style={css.borda}
                 onValueChange={(value) => props.setar(value)}

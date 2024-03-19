@@ -7,6 +7,8 @@ import TituloCadastro from "../components/TituloCadastro";
 import RNDateTimePicker from "@react-native-community/datetimepicker";
 import {useState} from "react";
 import BtnCadastrar from "../components/BtnCadastrar";
+import TextCadastro from "../components/TextCadastro";
+import Navigator from "../components/Navigator";
 
 export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
@@ -36,15 +38,17 @@ export default function ({navigation}){
                     <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
                     { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
                     <Pressable onPress={() => setExibe(true)}>
-                        <Text style={css.inputs}>{data}
-                        </Text>
+                         <TextCadastro style={css.inputs} value={data} nome="Data:"></TextCadastro>
                     </Pressable>
+
+
                     <SelectCadastro setar={setCategoria}></SelectCadastro>
                 </View>
                 <View style={css.btn}>
                     <BtnCadastrar valor={valor} nome={nome} data={data} categoria={categoria} style={css.btn} navigation={navigation}></BtnCadastrar>
                 </View>
             </View>
+            <Navigator></Navigator>
         </SafeAreaView>
     )
 }
