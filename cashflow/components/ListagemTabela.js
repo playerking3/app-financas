@@ -2,8 +2,13 @@ import {Pressable, StyleSheet, Text, View} from "react-native";
 import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
 import TabelaLinha from "./TabelaLinha";
+import {useContext} from "react";
+import {Dados} from "../context/Dados";
 
 export default function ({navigation}){
+    const {financeiro, total} = useContext(Dados)
+
+    console.log(total)
     return(
         <View style={css.container}>
             <View>
@@ -13,10 +18,13 @@ export default function ({navigation}){
                     <Pressable style={css.btn} onPress={() => navigation.navigate("Cadastro")}><Text style={css.btnTexto}>Adicionar</Text></Pressable>
                 </View>
                 <Hr/>
+                {financeiro.length > 0 && financeiro.map((obj)=>(
+                    <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor}/>
+                ))}
             </View>
 
             <View style={css.linhaBtn}>
-                <Text style={css.texto}>Total: R$00,00</Text>
+                <Text style={css.texto}>Total: R${(total.totalReceitas - total.totalDespesa)}</Text>
             </View>
         </View>
     )

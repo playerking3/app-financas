@@ -1,4 +1,4 @@
-import {Pressable, StyleSheet, Text, View} from "react-native";
+import {Pressable, ScrollView, StyleSheet, Text, View} from "react-native";
 import {SafeAreaView} from 'react-native-safe-area-context';
 import InputsCadastro from "../components/InputsCadastro";
 import SelectCadastro from "../components/SelectCadastro";
@@ -28,26 +28,28 @@ export default function ({navigation}){
 
     return(
         <SafeAreaView style={css.container}>
-            <Hub></Hub>
-            <View style={css.container2}>
-                <View>
-                    <TituloCadastro></TituloCadastro>
-                </View>
-                <View style={css.inputs}>
-                    <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
-                    <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
-                    { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
-                    <Pressable onPress={() => setExibe(true)}>
-                         <TextCadastro style={css.inputs} value={data} nome="Data:"></TextCadastro>
-                    </Pressable>
+                <Hub></Hub>
+            <ScrollView style={{flex: 1}}>
+                <View style={css.container2}>
+                    <View>
+                        <TituloCadastro></TituloCadastro>
+                    </View>
+                    <View style={css.inputs}>
+                        <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
+                        <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
+                        { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
+                        <Pressable onPress={() => setExibe(true)}>
+                            <TextCadastro style={css.inputs} value={data} nome="Data:"></TextCadastro>
+                        </Pressable>
 
 
-                    <SelectCadastro setar={setCategoria}></SelectCadastro>
+                        <SelectCadastro setar={setCategoria}></SelectCadastro>
+                    </View>
+                    <View style={css.btn}>
+                        <BtnCadastrar valor={valor} nome={nome} data={data} categoria={categoria} style={css.btn} navigation={navigation}></BtnCadastrar>
+                    </View>
                 </View>
-                <View style={css.btn}>
-                    <BtnCadastrar valor={valor} nome={nome} data={data} categoria={categoria} style={css.btn} navigation={navigation}></BtnCadastrar>
-                </View>
-            </View>
+            </ScrollView>
             <Navigator></Navigator>
         </SafeAreaView>
     )
@@ -60,7 +62,6 @@ const css = StyleSheet.create({
         alignItems: 'center'
     },
     container2: {
-        height: "50%",
         justifyContent: "center",
         margin: 20,
         gap: 25

@@ -13,7 +13,7 @@ export default function (props){
 
                 onChangeText={props.setar}
                 style={{height: 40, borderBottomWidth: 3,borderColor: "black",paddingHorizontal: "40%" ,
-                    borderRadius: 5}}>
+                    borderRadius: 5, width: '100%'}}>
 
                 {props.value}
             </Text>

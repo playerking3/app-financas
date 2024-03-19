@@ -2,6 +2,7 @@ import {css} from "../Style/StyleListagemTabela";
 import {Text, View} from "react-native";
 
 
+
 export default function ({nome, valor, data}){
     return (
         <View style={css.linha}>
