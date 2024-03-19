@@ -3,8 +3,10 @@ import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
 import {Dados} from "../context/Dados";
 import {useContext} from "react";
+import TabelaLinha from "./TabelaLinha";
 
 export default function ({navigation}){
+    const {financeiro, total} = useContext(Dados)
     const {texto, setTexto} = useContext(Dados)
     const {cinza, setCinza} = useContext(Dados)
     const text = StyleSheet.create({
@@ -21,12 +23,6 @@ export default function ({navigation}){
             justifyContent: "space-between"
         }
     })
-import TabelaLinha from "./TabelaLinha";
-import {useContext} from "react";
-import {Dados} from "../context/Dados";
-
-export default function ({navigation}){
-    const {financeiro, total} = useContext(Dados)
 
     console.log(total)
     return(

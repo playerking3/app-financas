@@ -1,5 +1,4 @@
 import {View, StyleSheet, Text, Image, Pressable} from "react-native";
-import {SafeAreaView} from 'react-native-safe-area-context';
 import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faBell, faEye} from "@fortawesome/free-solid-svg-icons";
 import {css} from '../Style/StyleHub'
@@ -10,7 +9,7 @@ export default function (){
 
      const hub = StyleSheet.create({
         hub: {
-            height: '30%',
+            height: 200,
             width: '100%',
             backgroundColor: corHub,
             borderBottomRightRadius: 30,

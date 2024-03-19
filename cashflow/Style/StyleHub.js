@@ -35,7 +35,7 @@ export const css = StyleSheet.create({
         flexDirection: 'row',
         alignItems:'center',
         justifyContent: 'center',
-        paddingTop:10,
+        paddingTop: 10,
         gap:10
     },
     perfil: {

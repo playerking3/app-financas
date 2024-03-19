@@ -29,6 +29,7 @@ const css = StyleSheet.create({
         borderWidth: 5,
         borderColor: "black",
         paddingHorizontal: "40%" ,
-        borderRadius: 20
+        borderRadius: 20,
+        width: "100%"
     }
 })

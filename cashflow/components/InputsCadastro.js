@@ -1,7 +1,6 @@
 import {StyleSheet, Text, TextInput, View} from "react-native";
 import {useContext, useState} from "react";
 import {Dados} from "../context/Dados";
-import {brands} from "@fortawesome/fontawesome-svg-core/import.macro";
 
 export default function (props){
     const [nome, setNome] = useState("");
