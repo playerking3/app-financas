@@ -10,6 +10,7 @@ import {Dados} from "../context/Dados";
 import TextCadastro from "../components/TextCadastro";
 import BtnCadastrar from "../components/BtnCadastrar";
 import Navigator from "../components/Navigator";
+import DataCadastro from "../components/DataCadastro";
 
 export default function ({navigation}){
     const [exibe, setExibe] = useState(false)
@@ -20,33 +21,6 @@ export default function ({navigation}){
     const {texto, setTexto} = useContext(Dados)
     const {branco, setBranco} = useContext(Dados)
 
-    const css = StyleSheet.create({
-        container: {
-            width: '100%',
-            height:'100%',
-            alignItems: 'center',
-
-        },
-        container2: {
-            height: "50%",
-            justifyContent: "center",
-            margin: 20,
-            gap: 25
-        },
-        inputs:{
-            marginTop: 100,
-            gap: 15,
-            color: texto
-        }
-    })
-
-    const onChange = (event) => {
-        setExibe(false);
-        const dia = new Date(event.nativeEvent.timestamp).getDate()
-        const mes = new Date(event.nativeEvent.timestamp).getMonth() + 1
-        const ano = new Date(event.nativeEvent.timestamp).getFullYear()
-        setData(dia+"/"+ mes+"/"+ano)
-    };
 
     return(
         <SafeAreaView style={css.container}>
@@ -59,10 +33,8 @@ export default function ({navigation}){
                     <View style={css.inputs}>
                         <InputsCadastro  nome="Valor:" tipo="numeric" setar={setValor}></InputsCadastro>
                         <InputsCadastro style={css.inputs}  nome="Nome:" setar={setNome}></InputsCadastro>
-                        { exibe && <RNDateTimePicker value={new Date()} onChange={onChange} display={'spinner'}/>}
-                        <Pressable onPress={() => setExibe(true)}>
-                            <TextCadastro style={css.inputs} value={data} nome="Data:"></TextCadastro>
-                        </Pressable>
+
+                        <DataCadastro data={data} setData={setData}></DataCadastro>
 
 
                         <SelectCadastro setar={setCategoria}></SelectCadastro>
