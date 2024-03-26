@@ -33,12 +33,15 @@ export default function ({navigation}){
                 </View>
                 <Hr/>
                 {financeiro.length > 0 && financeiro.map((obj)=>(
-                    obj.categoria === "receitas" && filtro !== 'despesa' ? (
-                        <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#1a913a'}/>
-                    ) : filtro !== 'receita' ? (
+                    <>
+                        {obj.categoria === "receitas" && filtro !== 'despesa' && (
+                            <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#1a913a'}/>
+                        )}
+
+                        {obj.categoria === "despesas" && filtro !== 'receita' && (
                             <TabelaLinha data={obj.data} nome
-                                ={obj.nome} valor={obj.valor} cor={'#b31b00'}/>
-                        ) : (<TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'black'}/>)
+                                ={obj.nome} valor={obj.valor} cor={'#b31b00'}/>)}
+                    </>
                 ))}
             </View>
 

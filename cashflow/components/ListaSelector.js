@@ -21,13 +21,12 @@ export default function (){
         } else {
             setFiltro(nome)
         }
-        console.log(filtro)
     }
 
     return(
         <View style={css.container}>
-            <View style={css.selectorDisplay}>
-                <Pressable onPress={()=> mudaFiltro('receita')}>
+            <View style={}>
+                <Pressable onPress={()=> mudaFiltro('receita')} style={css.selectorDisplay}>
                     <Text style={text.texto}>Minhas economias</Text>
                     <FontAwesomeIcon icon={faPlus} style={css.iconBg} size={22}/>
                 </Pressable>
