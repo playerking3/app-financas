@@ -39,7 +39,7 @@ function DadosProvider({ children }) {
 
 
     return (
-        <Dados.Provider value={{financeiro, cadastroFinanceiro,texto, setTexto, corHub, setCorHub, branco, setBranco, cinza, setCinza, total, filtro, setFiltro}}>
+        <Dados.Provider value={{meta, setMeta, financeiro, cadastroFinanceiro,texto, setTexto, corHub, setCorHub, branco, setBranco, cinza, setCinza, total, filtro, setFiltro}}>
             {children}
         </Dados.Provider>
     )

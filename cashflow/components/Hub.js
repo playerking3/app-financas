@@ -6,6 +6,7 @@ import {Dados} from "../context/Dados";
 import {useContext, useState} from "react";
 export default function ({navigation}){
     const {corHub, setCorHub} = useContext(Dados)
+    const {meta, setMeta} = useContext(Dados)
     const {total} = useContext(Dados)
     const [texto, setTexto] = useState(total.totalReceitas - total.totalDespesa)
 

@@ -36,7 +36,6 @@ export const css = StyleSheet.create({
         borderRadius: 100
     },
     barraColor: {
-        width: '57%',
         height: 10,
         backgroundColor: '#FFD60A',
         borderRadius: 100
