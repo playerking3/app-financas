@@ -14,21 +14,26 @@ export default function (){
             color:texto
         }
     })
-    
+
     function mudaFiltro(nome){
-        if (nome == )
+        if (nome == filtro){
+            setFiltro('tudo')
+        } else {
+            setFiltro(nome)
+        }
+        console.log(filtro)
     }
 
     return(
         <View style={css.container}>
             <View style={css.selectorDisplay}>
-                <Pressable>
+                <Pressable onPress={()=> mudaFiltro('receita')}>
                     <Text style={text.texto}>Minhas economias</Text>
                     <FontAwesomeIcon icon={faPlus} style={css.iconBg} size={22}/>
                 </Pressable>
             </View>
             <View style={css.selectorDisplay}>
-                <Pressable>
+                <Pressable onPress={()=> mudaFiltro('despesa')}>
                     <Text style={text.texto}>Minhas despesas</Text>
                     <FontAwesomeIcon icon={faMinus} style={css.iconBg} size={22}/>
                 </Pressable>

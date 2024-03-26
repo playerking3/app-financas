@@ -6,8 +6,7 @@ import {useContext, useState} from "react";
 import TabelaLinha from "./TabelaLinha";
 
 export default function ({navigation}){
-    const {financeiro, total,texto, setTexto, cinza, setCinza} = useContext(Dados)
-
+    const {financeiro, total,texto, setTexto, cinza, setCinza, filtro} = useContext(Dados)
 
     const text = StyleSheet.create({
         texto:{
@@ -37,8 +36,9 @@ export default function ({navigation}){
                     obj.categoria === "receitas" && filtro !== 'despesa' ? (
                         <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#1a913a'}/>
                     ) : filtro !== 'receita' ? (
-                            <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#b31b00'}/>
-                        ) : ({})
+                            <TabelaLinha data={obj.data} nome
+                                ={obj.nome} valor={obj.valor} cor={'#b31b00'}/>
+                        ) : (<TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'black'}/>)
                 ))}
             </View>
 
