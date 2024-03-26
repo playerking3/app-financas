@@ -6,6 +6,8 @@ const Dados = createContext();
 function DadosProvider({ children }) {
     const [financeiro, setFinanceiro] = useState([])
 
+    const [filtro, setFiltro] = useState('tudo')
+
     let totalDespesa = financeiro.reduce((soma, item) => {
         if (item.categoria === "despesas") return soma + parseFloat(item.valor)
     }, 0)
@@ -37,7 +39,7 @@ function DadosProvider({ children }) {
 
 
     return (
-        <Dados.Provider value={{financeiro, cadastroFinanceiro,texto, setTexto, corHub, setCorHub, branco, setBranco, cinza, setCinza, total}}>
+        <Dados.Provider value={{financeiro, cadastroFinanceiro,texto, setTexto, corHub, setCorHub, branco, setBranco, cinza, setCinza, total, filtro, setFiltro}}>
             {children}
         </Dados.Provider>
     )
