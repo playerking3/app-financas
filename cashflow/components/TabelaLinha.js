@@ -1,14 +1,20 @@
 import {css} from "../Style/StyleListagemTabela";
-import {Text, View} from "react-native";
+import {StyleSheet, Text, View} from "react-native";
 
 
-
-export default function ({nome, valor, data}){
+export default function ({nome, valor, data, cor}){
+    const cores = StyleSheet.create({
+        texto:{
+            color: cor
+        }
+    })
     return (
         <View style={css.linha}>
-            <Text style={css.texto}>{nome}</Text>
-            <Text style={css.texto}>{valor}</Text>
-            <Text style={css.texto}>{data}</Text>
+            <Text style={cores.texto}>{nome}</Text>
+            <Text style={cores.texto}>{valor}</Text>
+            <Text style={cores.texto}>{data}</Text>
         </View>
     )
 }
+
+

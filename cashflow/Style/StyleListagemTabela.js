@@ -7,10 +7,6 @@ export const css = StyleSheet.create({
         justifyContent: "space-between",
 
     },
-    texto:{
-        fontSize: 16
-    },
-
     linhaBtn: {
         padding: 8,
         flexDirection: "row",
