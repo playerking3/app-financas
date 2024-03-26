@@ -33,6 +33,7 @@ function DadosProvider({ children }) {
     const [branco, setBranco] = useState('#FFFFFF')
     const [cinza, setCinza] = useState('#F4F4F4')
     const [texto, setTexto] = useState('#000')
+    const [meta, setMeta] = useState(2000)
 
 
 

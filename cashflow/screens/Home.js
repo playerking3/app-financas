@@ -22,7 +22,7 @@ export default function ({navigation}){
     })
     return(
         <SafeAreaView style={css.container}>
-            <Hub></Hub>
+            <Hub navigation={navigation}></Hub>
             <Metas></Metas>
             <CardHome></CardHome>
             <Navigator navigation={navigation}></Navigator>

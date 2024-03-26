@@ -21,7 +21,7 @@ export default function ({navigation}){
     })
     return(
         <SafeAreaView style={cont.container}>
-            <Hub></Hub>
+            <Hub navigation={navigation}></Hub>
             <View style={css.divgrande}>
                 <Pressable onPress={() =>{
                     if(corHub == '#FFD60A'){

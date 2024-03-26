@@ -6,7 +6,6 @@ import ListagemTabela from "../components/ListagemTabela";
 import Navigator from "../components/Navigator";
 import {Dados} from "../context/Dados";
 import {useContext} from "react";
-
 export default function ({navigation}){
     const {branco,setBranco} = useContext(Dados)
     const cont = StyleSheet.create({
@@ -19,17 +18,13 @@ export default function ({navigation}){
     }})
     return(
         <SafeAreaView style={cont.container}>
-            <Hub></Hub>
+            <Hub navigation={navigation}></Hub>
             <ListaSelector></ListaSelector>
             <ListagemTabela navigation={navigation}></ListagemTabela>
             <Navigator navigation={navigation}></Navigator>
         </SafeAreaView>
-    )
-}
-
+    )}
 const css = StyleSheet.create({
     container: {
         width: '100%',
-        height:'100%',
-    }
-})
+        height:'100%',}})
