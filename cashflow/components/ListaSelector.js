@@ -25,18 +25,14 @@ export default function (){
 
     return(
         <View style={css.container}>
-            <View style={}>
                 <Pressable onPress={()=> mudaFiltro('receita')} style={css.selectorDisplay}>
                     <Text style={text.texto}>Minhas economias</Text>
                     <FontAwesomeIcon icon={faPlus} style={css.iconBg} size={22}/>
                 </Pressable>
-            </View>
-            <View style={css.selectorDisplay}>
-                <Pressable onPress={()=> mudaFiltro('despesa')}>
+                <Pressable onPress={()=> mudaFiltro('despesa')} style={css.selectorDisplay}>
                     <Text style={text.texto}>Minhas despesas</Text>
                     <FontAwesomeIcon icon={faMinus} style={css.iconBg} size={22}/>
                 </Pressable>
-            </View>
         </View>
     )
 }
