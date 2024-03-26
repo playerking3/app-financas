@@ -2,11 +2,13 @@ import {Pressable, StyleSheet, Text, View} from "react-native";
 import Hr from "./Hr";
 import {css} from '../Style/StyleListagemTabela'
 import {Dados} from "../context/Dados";
-import {useContext} from "react";
+import {useContext, useState} from "react";
 import TabelaLinha from "./TabelaLinha";
 
 export default function ({navigation}){
     const {financeiro, total,texto, setTexto, cinza, setCinza} = useContext(Dados)
+
+
     const text = StyleSheet.create({
         texto:{
             fontSize: 16,
@@ -32,7 +34,11 @@ export default function ({navigation}){
                 </View>
                 <Hr/>
                 {financeiro.length > 0 && financeiro.map((obj)=>(
-                    <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor}/>
+                    obj.categoria === "receitas" && filtro !== 'despesa' ? (
+                        <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#1a913a'}/>
+                    ) : filtro !== 'receita' ? (
+                            <TabelaLinha data={obj.data} nome={obj.nome} valor={obj.valor} cor={'#b31b00'}/>
+                        ) : ({})
                 ))}
             </View>
 
