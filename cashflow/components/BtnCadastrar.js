@@ -6,7 +6,7 @@ function BtnCadastrar(props){
     const {cadastroFinanceiro} = useContext(Dados)
 
     function cadastrar(){
-        console.log(props)
+
         cadastroFinanceiro(
             {
                 valor: props.valor,

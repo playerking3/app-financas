@@ -3,12 +3,18 @@ import {FontAwesomeIcon} from "@fortawesome/react-native-fontawesome";
 import {faBell, faEye, faRightFromBracket} from "@fortawesome/free-solid-svg-icons";
 import {css} from '../Style/StyleHub'
 import {Dados} from "../context/Dados";
-import {useContext, useState} from "react";
+import {useContext, useEffect, useState} from "react";
 export default function ({navigation}){
     const {corHub, setCorHub} = useContext(Dados)
     const {meta, setMeta} = useContext(Dados)
     const {total} = useContext(Dados)
     const [texto, setTexto] = useState(total.totalReceitas - total.totalDespesa)
+
+    useEffect(() => {
+        if (texto !== "***"){
+            setTexto(total.totalReceitas - total.totalDespesa)
+        }
+    }, [total]);
 
     function mudatexto(){
         if(texto !== '***'){

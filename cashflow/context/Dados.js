@@ -1,25 +1,43 @@
-import {createContext, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import {Alert} from "react-native";
 
 const Dados = createContext();
 
 function DadosProvider({ children }) {
     const [financeiro, setFinanceiro] = useState([])
-
     const [filtro, setFiltro] = useState('tudo')
+    const [total, setTotal] = useState({
+        totalDespesa: 0,
+        totalReceitas: 0
+    })
 
-    let totalDespesa = financeiro.reduce((soma, item) => {
-        if (item.categoria === "despesas") return soma + parseFloat(item.valor)
-    }, 0)
+    useEffect(() => {
+        console.log(financeiro)
 
-    let totalReceitas = financeiro.reduce((soma, item) => {
-        if (item.categoria === "receitas") return soma + parseFloat(item.valor)
-    }, 0)
+        let totalDespesas = 0
+        let totalReceitas = 0
 
-    let total = {
-        totalDespesa : totalDespesa || 0,
-        totalReceitas: totalReceitas || 0
-    }
+        financeiro.map((item) => {
+            if (item.categoria === "despesas") {
+                totalDespesas += parseFloat(item.valor);
+            } else {
+                totalReceitas += parseFloat(item.valor);
+            }
+        })
+
+        console.log("ANTES", totalDespesas, totalReceitas)
+
+        let totalAux = {
+            totalDespesa : totalDespesas || 0,
+            totalReceitas: totalReceitas || 0
+        }
+
+        console.log("DEPOIS", totalAux)
+
+        setTotal(totalAux)
+
+    }, [financeiro]);
+
 
     function cadastroFinanceiro(dados = {}) {
         if(dados?.valor === "" || dados?.nome === "" || dados?.data === "" || dados?.categoria === "") {
@@ -39,7 +57,9 @@ function DadosProvider({ children }) {
 
 
     return (
+
         <Dados.Provider value={{meta, setMeta, financeiro, cadastroFinanceiro,texto, setTexto, corHub, setCorHub, branco, setBranco, cinza, setCinza, total, filtro, setFiltro}}>
+            
             {children}
         </Dados.Provider>
     )
