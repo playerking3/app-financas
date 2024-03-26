@@ -50,7 +50,7 @@ export default function ({navigation}){
 
     return(
         <SafeAreaView style={css.container}>
-                <Hub></Hub>
+                <Hub navigation={navigation}></Hub>
             <ScrollView style={{flex: 1}}>
                 <View style={css.container2}>
                     <View>
