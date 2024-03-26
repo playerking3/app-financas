@@ -12,7 +12,7 @@ export default function (props){
                 style={css.borda}
                 onValueChange={(value) => props.setar(value)}
                 items={[
-                    { label: 'Economia', value: 'economia' },
+                    { label: 'Receitas', value: 'receitas' },
                     { label: 'Despesas', value: 'despesas' }
                 ]}
             />
