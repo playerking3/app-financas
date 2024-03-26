@@ -2,7 +2,6 @@ import RNDateTimePicker from "@react-native-community/datetimepicker";
 import {Pressable, StyleSheet, View} from "react-native";
 import TextCadastro from "./TextCadastro";
 import {useState} from "react";
-import DataFunc from "../util/Data"
 
 
 function DataCadastro({data, setData}){
